@@ -1,0 +1,29 @@
+package empleado;
+
+import java.util.Scanner;
+
+public class Empleado {
+
+    public static void main(String[] args) {
+   
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número binario de 16 dígitos: ");
+        String binario = scanner.nextLine();
+
+        if (binario.length() != 16 || !binario.matches("[01]+")) {
+            System.out.println("Error: Debe ingresar un número binario de 16 dígitos.");
+            return;
+        }
+
+        int decimal = Integer.parseInt(binario, 2);
+        String octal = Integer.toOctalString(decimal);
+        String hexadecimal = Integer.toHexString(decimal);
+
+        System.out.println("Decimal: " + decimal);
+        System.out.println("Octal: " + octal);
+        System.out.println("Hexadecimal: " + hexadecimal);
+
+        scanner.close();
+    }
+}
